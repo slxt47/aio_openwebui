@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   open-webui:
     image: ghcr.io/open-webui/open-webui:main
@@ -7,7 +5,7 @@ services:
     volumes:
       - open-webui_data:/app/backend/data
     ports:
-      - "3000:8080"
+      - "127.0.0.1:3000:8080"     # für Zugriff im Netz: "3000:8080"
     environment:
       - OLLAMA_BASE_URL=http://host.docker.internal:11434
     restart: unless-stopped
